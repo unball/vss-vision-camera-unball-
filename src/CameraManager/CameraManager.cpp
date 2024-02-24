@@ -67,6 +67,9 @@ bool CameraManager::init(int cameraIndex) {
   }
 
   this->_capture.set(cv::CAP_PROP_FOURCC, cv::VideoWriter::fourcc('M', 'J', 'P', 'G'));
+  this->_capture.set(cv::CAP_PROP_FRAME_WIDTH, 640);
+  this->_capture.set(cv::CAP_PROP_FRAME_HEIGHT, 480);
+  this->_capture.set(cv::CAP_PROP_FPS, 120);
 
   if (this->_frameWidth !=
           static_cast<int>(this->_capture.get(cv::CAP_PROP_FRAME_WIDTH)) ||
